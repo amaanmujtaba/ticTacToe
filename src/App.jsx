@@ -27,11 +27,17 @@ function App() {
   for (const combination in WINNING_COMBINATIONS) {
     const currentCombination = WINNING_COMBINATIONS[combination];
 
-    const first = gameBoard[currentCombination[0].row][currentCombination[0].column];
+    let first = gameBoard[currentCombination[0].row][currentCombination[0].column];
     const second = gameBoard[currentCombination[1].row][currentCombination[1].column];
     const third = gameBoard[currentCombination[2].row][currentCombination[2].column];
 
     if (first !== null && first === second && second === third) {
+      if(first === "O"){
+        first = "Player 1";
+      }
+      else{
+        first = "Player 2";
+      }
       winner = `${first} won`;
     }
   }
@@ -68,7 +74,7 @@ function App() {
     currentPlayer = "X";
   }
 
-  
+
 
   return (
     <main>
