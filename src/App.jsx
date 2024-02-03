@@ -72,7 +72,6 @@ function App() {
 
   return (
     <main>
-      
       <div id = "game-container">
         <ol id="players" className="highlight-player">
           <PlayerDetails name = "Player 1" symbol = "O" active = {currentPlayer==="O"} />
